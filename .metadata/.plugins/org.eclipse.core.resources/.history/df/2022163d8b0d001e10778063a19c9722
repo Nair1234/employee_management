@@ -1,0 +1,20 @@
+package com.example.demo.EmployeeService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+@org.springframework.stereotype.Service
+public class EmployeeService {
+	@Autowired
+	Repository Repository;
+
+	public Employee addEmployee(Employee employee) {
+		return Repository.save(employee);
+	}
+
+	public Employee getById(Integer Employee_id) {
+	 return Repository.findById(Employee_id).orElse(null);
+	    }
+}
+
+}

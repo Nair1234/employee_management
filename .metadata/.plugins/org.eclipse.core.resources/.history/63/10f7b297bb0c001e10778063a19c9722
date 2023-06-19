@@ -1,0 +1,22 @@
+package com.example.EmployeeService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.Employee.Employee;
+import com.example.EmployeeRepository.EmployeeRepository;
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeRepository employeeRepository;
+	
+	public Employee addEmployee(Employee employee) {
+		return employeeRepository.save(employee);
+	}
+
+	public Employee getById(Integer Employee_id) {
+	 return employeeRepository.findById(Employee_id).orElse(null);
+	    }
+
+	
+}
